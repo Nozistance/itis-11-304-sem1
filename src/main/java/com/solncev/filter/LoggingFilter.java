@@ -45,7 +45,7 @@ public class LoggingFilter implements Filter {
                             e -> e.getKey() + "=" + Arrays.toString(e.getValue()))
                     .collect(Collectors.joining(", ", "{", "}"));
             this.servletContext.log(request.getRemoteAddr() + " : request params: " + paramStr);
-//            LOG.info("{} : request params : {}", request.getRemoteAddr(), paramStr);
+            LOG.info("{} : request params : {}", request.getRemoteAddr(), paramStr);
         }
 
         chain.doFilter(request, response);
